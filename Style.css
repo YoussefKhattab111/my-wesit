@@ -1,0 +1,248 @@
+:root {
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --dark-bg: #222;
+    --card-bg: rgba(0, 0, 0, 0.7);
+    --text-light: #ffffff;
+    --text-muted: #aaaaaa;
+    --transition-speed: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--dark-bg);
+    background-image: url('Youssef1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-light);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.container {
+    position: relative; /* أساس للعناصر المطلقة داخلها */
+    padding-top: 100px; /* مساحة للبانر */
+    border-radius: 15px; /* استعادة الزوايا المستديرة */
+    background-color: var(--card-bg);
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    max-width: 500px;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.banner-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    z-index: 0;
+}
+
+.profile-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('Youssef2.jpg') center/cover;
+    transform: none; /* إزالة التحويل السابق */
+    border-radius: 0 0 50% 50%;
+}
+.profile-pic {
+    position: relative;
+    z-index: 2; /* تأكد أن الصورة فوق البانر */
+    margin-top: 125px; /* رفع الصورة فوق البانر */
+    width: 150px;
+    height: 150px;
+    border: 5px solid white;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.profile-info {
+    text-align: center;
+    position: relative;
+    z-index: 2; /* تأكد أن النص فوق البانر */
+    margin-top: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    font-weight: 700;
+    opacity: 0.9;
+}
+
+.bio {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 15px 0;
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+.call-to-action {
+    font-size: 1.2rem;
+    margin: 10px;
+    margin-bottom: 20px;
+    color: var(--text-light);
+    opacity: 0.8;
+    font-weight: 700;
+    text-align: center;
+}
+
+.buttons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.social-button, .contact-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--text-light);
+    padding: 15px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.social-button i, .contact-button i {
+    margin-right: 12px;
+    font-size: 1.2rem;
+}
+
+.social-button:hover, .contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Social media specific hover effects */
+.youtube:hover { background-color: #ff0000 !important; }
+.instagram:hover { background-color: #E1306C !important; }
+.facebook:hover { background-color: #3b5998 !important; }
+.snapchat:hover { background-color: #FFFC00 !important; color: #000 !important; }
+.tiktok:hover { background-color: #000 !important; }
+
+.contact-section {
+    margin-top: 20px;
+}
+
+.contact-button {
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.contact-button:hover {
+    background-color: var(--primary-hover);
+}
+
+.site-footer {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.powered-by {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 20px;
+}
+
+.powered-by a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.powered-by a:hover {
+    color: var(--text-light);
+    text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+    .profile-banner {
+        height: 250px;
+        top: -20px;
+    }
+    
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+}
