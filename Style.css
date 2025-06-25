@@ -1,11 +1,15 @@
 :root {
     --primary-color: #007bff;
     --primary-hover: #0056b3;
-    --dark-bg: #222;
-    --card-bg: rgba(0, 0, 0, 0.7);
+    --dark-bg: #1a1a1a;
+    --light-bg: #f4f4f9;
+    --card-bg-dark: rgba(0, 0, 0, 0.7);
+    --card-bg-light: rgba(255, 255, 255, 0.9);
     --text-light: #ffffff;
+    --text-dark: #333333;
     --text-muted: #aaaaaa;
     --transition-speed: 0.3s;
+    --border-radius: 15px;
 }
 
 * {
@@ -16,7 +20,6 @@
 
 body {
     font-family: 'Poppins', Arial, sans-serif;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -29,27 +32,33 @@ body {
     color: var(--text-light);
     line-height: 1.6;
     padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    backdrop-filter: blur(0px);
 }
 
 .container {
-    position: relative; /* أساس للعناصر المطلقة داخلها */
-    padding-top: 100px; /* مساحة للبانر */
-    border-radius: 15px; /* استعادة الزوايا المستديرة */
-    background-color: var(--card-bg);
+    position: relative;
+    padding-top: 120px;
+    border-radius: var(--border-radius);
+    background-color: var(--card-bg-dark);
     padding: 40px 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
 }
 
-.profile-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 5px;
+body.light-mode .container {
+    background-color: var(--card-bg-light);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .banner-wrapper {
@@ -57,82 +66,80 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 250px;
+    height: 200px;
     overflow: hidden;
-    border-radius: 15px 15px 0 0;
-    z-index: 0;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .profile-banner {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background: url('Youssef2.jpg') center/cover;
-    transform: none; /* إزالة التحويل السابق */
-    border-radius: 0 0 50% 50%;
+    border-radius: 0% 0% 50px 50px;
+    background: url('Youssef2.jpg') center/cover no-repeat;
+    transition: transform 0.5s ease;
 }
+
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-bottom: 20px;
+}
+
 .profile-pic {
     position: relative;
-    z-index: 2; /* تأكد أن الصورة فوق البانر */
-    margin-top: 125px; /* رفع الصورة فوق البانر */
-    width: 150px;
-    height: 150px;
-    border: 5px solid white;
+    z-index: 2;
+    margin-top: 100px;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid rgba(255, 255, 255, 0.2);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 4px solid rgba(255, 255, 255, 0.9);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+body.light-mode .profile-pic {
+    border: 4px solid rgba(0, 0, 0, 0.2);
 }
 
 .profile-pic:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 .profile-info {
     text-align: center;
-    position: relative;
-    z-index: 2; /* تأكد أن النص فوق البانر */
-    margin-top: 20px;
+    z-index: 2;
+    margin-top: 15px;
 }
 
 h1 {
-    font-size: 2rem;
-    margin-bottom: 5px;
+    font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: 1px;
+    margin-bottom: 5px;
 }
 
 .subtitle {
-    font-size: 1rem;
-    color: var(--text-light);
-    margin-bottom: 10px;
-    font-weight: 700;
+    font-size: 1.1rem;
+    font-weight: 600;
     opacity: 0.9;
+    margin-bottom: 10px;
 }
 
 .bio {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin: 15px 0;
-    color: var(--text-light);
+    font-size: 1rem;
+    font-weight: 500;
     opacity: 0.8;
 }
 
 .call-to-action {
-    font-size: 1.2rem;
-    margin: 10px;
-    margin-bottom: 20px;
-    color: var(--text-light);
-    opacity: 0.8;
+    font-size: 1.3rem;
     font-weight: 700;
     text-align: center;
+    margin: 20px;
 }
 
 .buttons-grid {
@@ -152,11 +159,18 @@ h1 {
     border-radius: 12px;
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     transition: all var(--transition-speed) ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
+}
+
+body.light-mode .social-button,
+body.light-mode .contact-button {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: var(--text-dark);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .social-button i, .contact-button i {
@@ -167,52 +181,130 @@ h1 {
 .social-button:hover, .contact-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Social media specific hover effects */
 .youtube:hover { background-color: #ff0000 !important; }
-.instagram:hover { background-color: #E1306C !important; }
-.facebook:hover { background-color: #3b5998 !important; }
+.instagram:hover { background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4) !important; color: white !important; }
+.facebook:hover { background-color: #1877F2 !important; }
 .snapchat:hover { background-color: #FFFC00 !important; color: #000 !important; }
-.tiktok:hover { background-color: #000 !important; }
-
-.contact-section {
-    margin-top: 20px;
-}
+.tiktok:hover { background-color: #000 !important; color: #fff !important; }
 
 .contact-button {
     background-color: var(--primary-color);
     border: none;
+    margin: 20px;
 }
 
-.contact-button:hover {
-    background-color: var(--primary-hover);
+.contact-button:hover {background-color: #0056b3 !important; color: #fff !important;}
+
+.theme-toggle {
+    position: absolute;
+    top: -25px;
+    right: -20px;
+}
+
+/* Uiverse.io Switch Styles */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+    cursor: pointer;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    --background: #20262c;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: 0.5s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #ececd9, -4px 1px 4px 0px #dadada;
+    background: var(--background);
+    transition: 0.5s;
+}
+
+.decoration {
+    position: absolute;
+    content: "";
+    height: 2px;
+    width: 2px;
+    border-radius: 50%;
+    right: 20%;
+    top: 15%;
+    background: #e5f041e6;
+    backdrop-filter: blur(10px);
+    transition: all 0.5s;
+    box-shadow: -7px 10px 0 #e5f041e6, 8px 15px 0 #e5f041e6, -17px 1px 0 #e5f041e6,
+        -20px 10px 0 #e5f041e6, -7px 23px 0 #e5f041e6, -15px 25px 0 #e5f041e6;
+}
+
+input:checked ~ .decoration {
+    transform: translateX(-20px);
+    width: 10px;
+    height: 10px;
+    background: white;
+    box-shadow: -12px 0 0 white, -6px 0 0 1.6px white, 5px 15px 0 1px white,
+        1px 17px 0 white, 10px 17px 0 white;
+}
+
+input:checked + .slider {
+    background-color: #5494de;
+}
+
+input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #efdf2b, 0 0 10px 0px #efdf2b;
 }
 
 .site-footer {
     margin-top: 30px;
     text-align: center;
+    font-weight: 500;
 }
 
 .powered-by {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--text-muted);
-    margin-top: 20px;
 }
 
-.powered-by a {
-    color: var(--text-muted);
-    text-decoration: none;
-    transition: color var(--transition-speed) ease;
+body.light-mode .powered-by {
+    color: var(--text-dark);
+    opacity: 0.7;
 }
 
-.powered-by a:hover {
-    color: var(--text-light);
-    text-decoration: underline;
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
-/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -222,27 +314,241 @@ h1 {
     animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* Responsive design */
-@media (max-width: 480px) {
+/* معرض الصور الأفقي */
+.gallery-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.horizontal-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 15px;
+    padding: 10px 0;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.horizontal-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-item {
+    flex: 0 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+body.light-mode .gallery-item {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* أزرار التمرير */
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-button:hover {
+    opacity: 1;
+}
+
+.scroll-button.left {
+    left: -20px;
+}
+
+.scroll-button.right {
+    right: -20px;
+}
+
+.scroll-button i {
+    pointer-events: none;
+}
+
+/* تأثيرات للصورة عند النقر لعرضها بشكل كامل */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* أنماط زر الإعجاب والعداد */
+.like-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+body.light-mode .like-container {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.like-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1rem;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+
+body.light-mode .like-button {
+    color: var(--text-dark);
+}
+
+.like-button:hover {
+    transform: scale(1.1);
+}
+
+.like-button.liked {
+    color: #ff0000;
+}
+
+.like-count {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+body.light-mode .like-count {
+    color: var(--text-dark);
+}
+
+/* تعديلات للجوال */
+@media (max-width: 768px) {
     .container {
         padding: 30px 20px;
-        border-radius: 15px;
+        max-width: 100%;
     }
-    .profile-banner {
-        height: 250px;
-        top: -20px;
+    .banner-wrapper {
+        height: 180px;
+        border-radius: 15px 15px 50px 50px;
     }
-    
     .profile-pic {
         width: 120px;
         height: 120px;
+        margin-top: 80px;
     }
-    
     h1 {
         font-size: 1.6rem;
     }
-    
     .subtitle {
         font-size: 1rem;
+    }
+    .theme-toggle {
+        top: -20px;
+        right: -10px;
+    }
+    .gallery-item {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .scroll-button {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+    
+    .scroll-button.left {
+        left: -15px;
+    }
+    
+    .scroll-button.right {
+        right: -15px;
+    }
+    
+    .like-container {
+        padding: 3px 8px;
+    }
+    
+    .like-button {
+        font-size: 0.9rem;
+    }
+    
+    .like-count {
+        font-size: 0.8rem;
     }
 }
