@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Youssef Mohammed's official social media links and contact information">
-    <meta name="keywords" content="Youssef Mohammed, Egyptian student, social media links">
-    <title>Youssef Mohammed|Social Links</title>
-    <link rel="stylesheet" href="Style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="keywords" content="Youssef Mohammed, Egyptian student, social media links, contact">
+    <meta name="author" content="Youssef Mohammed">
+    <title>Youssef Mohammed | Social Links</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -16,50 +17,153 @@
 <body>
     <div class="container">
         <div class="banner-wrapper">
-          <div class="profile-banner"></div>
+            <div class="profile-banner"></div>
         </div>
-        <div class="profile-header">
-            <img src="Youssef.jpg" alt="Youssef Mohammed" class="profile-pic">
+        <header class="profile-header">
+            <img src="Youssef.jpg" alt="Youssef Mohammed's profile picture" class="profile-pic" loading="lazy">
             <div class="profile-info">
-                <h1>YOUSSEF MOHAMMED</h1>
-                <p class="subtitle">EGYPTIAN STUDENT</p>
+                <h1>Youssef Mohammed</h1>
+                <p class="subtitle">Egyptian Student</p>
                 <p class="bio">Dreamer | Storyteller | Explorer</p>
             </div>
-        </div>
+            <nav class="theme-toggle">
+                <label for="switch" class="switch">
+                    <input id="switch" type="checkbox" />
+                    <span class="slider"></span>
+                    <span class="decoration"></span>
+                </label>
+            </nav>
+        </header>
         <hr>
-      
-        <div class="social-media-links">
-            <p class="call-to-action">ALL MY SOCIAL MEDIA </p>
+        <section class="gallery-section" aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading" class="call-to-action">My Photo Gallery</h2>
+            <div class="gallery-container">
+                <button class="scroll-button left" aria-label="Scroll left">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="horizontal-gallery">
+                    <div class="gallery-item" tabindex="0">
+                        <img src="Youssef3.jpg" alt="Description of image 1" loading="lazy">
+                        <div class="like-container">
+                            <button class="like-button" aria-label="Like this photo">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="like-count">0</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" tabindex="0">
+                        <img src="Youssef4.jpg" alt="Description of image 2" loading="lazy">
+                        <div class="like-container">
+                            <button class="like-button" aria-label="Like this photo">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="like-count">0</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" tabindex="0">
+                        <img src="Youssef5.jpg" alt="Description of image 3" loading="lazy">
+                        <div class="like-container">
+                            <button class="like-button" aria-label="Like this photo">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="like-count">0</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" tabindex="0">
+                        <img src="Youssef6.jpg" alt="Description of image 4" loading="lazy">
+                        <div class="like-container">
+                            <button class="like-button" aria-label="Like this photo">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="like-count">0</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" tabindex="0">
+                        <img src="Youssef7.jpg" alt="Description of image 5" loading="lazy">
+                        <div class="like-container">
+                            <button class="like-button" aria-label="Like this photo">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="like-count">0</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" tabindex="0">
+                        <img src="Youssef8.jpg" alt="Description of image 6" loading="lazy">
+                        <div class="like-container">
+                            <button class="like-button" aria-label="Like this photo">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="like-count">0</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="scroll-button right" aria-label="Scroll right">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+        <hr>
+        <section class="social-media-links" aria-labelledby="social-links-heading">
+            <h2 id="social-links-heading" class="call-to-action">All My Social Media</h2>
             <div class="buttons-grid">
-                <a href="https://www.youtube.com/@Youssef_Mohammed_1" target="_blank" class="social-button youtube">
+                <a href="https://www.youtube.com/@Youssef_Mohammed_1" target="_blank" class="social-button youtube" aria-label="Youssef Mohammed's YouTube channel">
                     <i class="fab fa-youtube"></i> YouTube
                 </a>
-                <a href="https://www.instagram.com/youssef_mohammed_2" target="_blank" class="social-button instagram">
+                <a href="https://www.instagram.com/youssef_mohammed_2" target="_blank" class="social-button instagram" aria-label="Youssef Mohammed's Instagram profile">
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
-                <a href="https://www.facebook.com/youssef.mohammed.23" target="_blank" class="social-button facebook">
+                <a href="https://www.facebook.com/youssef.mohammed.23" target="_blank" class="social-button facebook" aria-label="Youssef Mohammed's Facebook profile">
                     <i class="fab fa-facebook-f"></i> Facebook
                 </a>
-                <a href="https://www.snapchat.com/add/youmoh236" target="_blank" class="social-button snapchat">
+                <a href="https://www.snapchat.com/add/youmoh236" target="_blank" class="social-button snapchat" aria-label="Youssef Mohammed's Snapchat profile">
                     <i class="fab fa-snapchat-ghost"></i> Snapchat
                 </a>
-                <a href="https://www.tiktok.com/@youssef_mohammed_3" target="_blank" class="social-button tiktok">
+                <a href="https://www.tiktok.com/@youssef_mohammed_3" target="_blank" class="social-button tiktok" aria-label="Youssef Mohammed's TikTok profile">
                     <i class="fab fa-tiktok"></i> TikTok
                 </a>
             </div>
-        </div>
+        </section>
         <hr>
-
-        <div class="contact-section">
+        <section class="contact-section" aria-labelledby="contact-heading">
+            <h2 id="contact-heading" class="visually-hidden">Contact Me</h2>
             <a href="mailto:youssef.official.236@gmail.com?subject=Contact%20from%20Website&body=Hello%20Youssef," class="contact-button">
-              <i class="fas fa-envelope"></i> Contact Me
+                <i class="fas fa-envelope"></i> Contact Me
             </a>
-        </div>
-
+        </section>
+        
         <footer class="site-footer">
             <p class="powered-by">© 2025 Youssef Mohammed. All rights reserved.</p>
         </footer>
     </div>
+
     <script src="script.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAQ-aawcKIEtosZGhFfuH3fMmWTfIHYkbg",
+            authDomain: "youssef-f063e.firebaseapp.com",
+            databaseURL: "https://youssef-f063e-default-rtdb.firebaseio.com",
+            projectId: "youssef-f063e",
+            storageBucket: "youssef-f063e.appspot.com",
+            messagingSenderId: "470581851972",
+            appId: "1:470581851972:web:ead108e0df7cbefaf58911",
+            measurementId: "G-W3BEEVC6HF"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            window.firebase = {
+                db,
+                ref,
+                set,
+                get,
+                child
+            };
+        });
+    </script>
 </body>
 </html>
